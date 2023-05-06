@@ -11,12 +11,14 @@ func (v *Vertex) Scale(f float64) {
 	v.Y = v.Y * f
 }
 
+//ポインタ型を引数(レシーバ)を受け取っている
 func ScaleFunc(v *Vertex, f float64) {
 	v.X = v.X * f
 	v.Y = v.Y * f
 }
 
 func main() {
+	//vとpはどこでポインタ型にしているのかが違うだけ、引数を渡すときか、初期化段階でポインタ型にするのか。
 	v := Vertex{3, 4}
 	v.Scale(2)
 	ScaleFunc(&v, 10)
